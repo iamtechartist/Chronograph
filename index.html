@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101417"><title>Open movement — Mechanical chronograph</title>  <script type="module" crossorigin src="./assets/index-CbqfEwbS.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-4d3qeKsE.css">
+</head>
+<body>
+  <main id="exhibit" aria-label="Interactive exposed mechanical chronograph">
+    <canvas id="scene" aria-label="Mechanical movement. Drag to orbit, scroll to zoom, drag the crown to wind."></canvas>
+    <header class="topbar">
+      <div class="identity"><span class="mark" aria-hidden="true">◴</span><div>OPEN MOVEMENT<span>MANUAL · COLUMN WHEEL</span></div></div>
+      <div class="view-tools"><button id="hero" title="Return to macro composition">MACRO <span>↗</span></button><button id="fit" title="Fit whole movement">FIT <span>⌗</span></button><button id="sound" title="Enable mechanical sound" aria-label="Enable mechanical sound" aria-pressed="false">SOUND OFF</button></div>
+    </header>
+    <div class="status" hidden><span class="status-light"></span><span id="playback">MECHANISM RUNNING</span><span class="status-separator">/</span><span id="wind-status">58% MODEL RESERVE</span></div>
+    <div id="labels" aria-hidden="true"></div>
+    <aside class="chrono-readout" aria-live="off"><span id="chrono-state">CHRONOGRAPH · READY</span><strong id="elapsed">00:00.00</strong><span class="readout-caption">ELAPSED MODEL TIME</span></aside>
+    <div id="loading" role="status">Preparing the movement<span></span></div>
+    <div id="error" hidden role="alert"></div>
+    <div class="bottom-interface">
+      <div class="inspection" id="inspection" hidden>
+        <span class="inspection-label" id="inspection-name">ESCAPEMENT</span>
+        <div class="speeds" role="group" aria-label="Simulation speed"><button data-speed="1" aria-pressed="true">1×</button><button data-speed="0.1" aria-pressed="false">0.1×</button><button data-speed="0.01" aria-pressed="false">0.01×</button></div>
+        <button id="fine-back" class="step" title="Pause and step back 1/120 second" aria-label="Step back">−</button>
+        <input id="scrub" type="range" min="0" max="1" value="1" step="1" aria-label="Scrub recorded inspection time">
+        <button id="fine-forward" class="step" title="Step forward 1/120 second" aria-label="Step forward">+</button>
+        <span id="inspect-time">0.000 s</span>
+      </div>
+      <nav class="subsystems" aria-label="Select a subsystem"><span class="inspect-caption">INSPECT</span><button data-system="escapement" aria-pressed="false">ESCAPEMENT</button><button data-system="power" aria-pressed="false">POWER</button><button data-system="chronograph" aria-pressed="false">CHRONOGRAPH</button><button data-system="time" aria-pressed="false">TIME</button><button id="clear-selection" title="Show all components" aria-label="Show all components" hidden>×</button></nav>
+      <div class="primary-controls" role="group" aria-label="Main mechanism controls">
+        <button id="wind" title="Hold to wind the mainspring"><span class="control-icon">↻</span><span>WIND</span><small>HOLD</small></button>
+        <button id="run" class="active" aria-pressed="true"><span class="control-icon play-icon">▷</span><span>RUN</span></button>
+        <button id="stop" aria-pressed="false"><span class="control-icon">Ⅱ</span><span>STOP</span></button>
+        <button id="chronograph"><span class="control-icon chrono-icon">◷</span><span>CHRONOGRAPH</span><i id="chrono-dot"></i></button>
+        <button id="reset" disabled title="Time an interval, then stop the chronograph to reset"><span class="control-icon">↶</span><span>RESET</span></button>
+      </div>
+      <p id="context" role="status">Drag to explore · Click a component to inspect</p>
+    </div>
+  </main>
+</body></html>
